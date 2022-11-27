@@ -68,6 +68,11 @@ noremap <TAB>
 "format code 
 map <F4> gg=G<C-o><C-o>
 
+"find and replace in all line. Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+#:%s/foo/bar/g
+"For specific lines:Change each 'foo' to 'bar' for all lines from line 6 to line 10 inclusive.
+#:6,10s/foo/bar/g
+
 "previous tab
 noremap <F1> <ESC>:tabprev <CR> 
 vnoremap <F1> <ESC>:tabprev <CR>
@@ -80,18 +85,18 @@ noremap <F3> <ESC> :w <CR> :make <CR>
 inoremap <F3> <ESC> :w <CR> :make <CR>
 
 "compiles and run c++ code without warning 
-noremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o %< % && ./%< < inp<CR>
-inoremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+noremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o %< % && ./%< < inp<CR>
+inoremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
  
  
 "compiles and run c++ code with warning and no input
-noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
-inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
-noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
  
 "compiles and run c++ code with warning and input
-noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
-inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++17 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
+inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
  
 "others
 let c_syntax_for_h=""
@@ -119,8 +124,8 @@ command! Us :e ~/.vim/UltiSnips/
 command! As :e ~/.vimrc
 command! Vm :e ~/.vim/
 "autocmd FocusLost * redraw!
-"command! LLDB :!clang++ -fsanitize=address -std=c++17 -O0 -g -o "%<" "%" && lldb %<
-command! Gdb !g++ -std=c++17 -O0 -g -o %< 
+"command! LLDB :!clang++ -fsanitize=address -std=c++20 -O0 -g -o "%<" "%" && lldb %<
+command! Gdb !g++ -std=c++20 -O0 -g -o %< 
 
 
 filetype on
