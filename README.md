@@ -8,7 +8,7 @@ just create new folder  /usr/local/include/bits and paste this file https://gith
 `solution`
 g++ -std=c++20 stdc++.h
 
-##add and commit
+## add and commit
 git config --global alias.coa '!git add -A && git commit -m'
 git coa "updated"
 
