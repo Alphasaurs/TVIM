@@ -33,80 +33,6 @@
 #include <cassert>
 #endif
 #include <cctype>
-#include <cfloat>
-#include <ciso646>
-#include <climits>
-#include <csetjmp>
-#include <cstdarg>
-#include <cstddef>
-#include <cstdlib>
-
-#if __cplusplus >= 201103L
-#include <cstdint>
-#endif
-
-// C++
-// #include <bitset>
-// #include <complex>
-#include <algorithm>
-#include <bitset>
-#include <functional>
-#include <iterator>
-#include <limits>
-#include <memory>
-#include <new>
-#include <numeric>
-#include <typeinfo>
-#include <utility>
-
-#if __cplusplus >= 201103L
-#include <array>
-#include <atomic>
-#include <initializer_list>
-#include <ratio>
-#include <scoped_allocator>
-#include <tuple>
-#include <typeindex>
-#include <type_traits>
-#endif
-
-#if __cplusplus >= 201402L
-#endif
-
-#if __cplusplus >= 201703L
-#include <any>
-#include <charconv>
-// #include <execution>
-#include <optional>
-#include <variant>
-#endif
-
-#if __cplusplus >= 202002L
-#include <bit>
-#include <compare>
-#include <concepts>
-#include <numbers>
-#include <ranges>
-#include <span>
-#include <source_location>
-#include <version>
-#endif
-
-#if __cplusplus > 202002L
-#include <expected>
-#include <stdatomic.h>
-#if __cpp_impl_coroutine
-# include <coroutine>
-#endif
-#endif
-
-
-#if _GLIBCXX_HOSTED
-// C
-#ifndef _GLIBCXX_NO_ASSERT
-#include <cassert>
-#endif
-#include <cctype>
 #include <cerrno>
 #include <cfloat>
 #include <ciso646>
@@ -128,14 +54,16 @@
 #include <ccomplex>
 #include <cfenv>
 #include <cinttypes>
-#include <cstdalign>
+// #include <cstdalign>
 #include <cstdbool>
 #include <cstdint>
 #include <ctgmath>
-#include <cuchar>
+// #include <cuchar>
 #endif
 
 // C++
+#include <algorithm>
+#include <bitset>
 #include <complex>
 #include <deque>
 #include <exception>
@@ -200,7 +128,7 @@
 // #include <execution>
 #include <filesystem>
 #include <optional>
-#include <memory_resource>
+// #include <memory_resource>
 #include <string_view>
 #include <variant>
 #endif
@@ -210,26 +138,20 @@
 #include <bit>
 #include <compare>
 #include <concepts>
-#include <format>
+#if __cpp_impl_coroutine
+# include <coroutine>
+#endif
 #include <latch>
 #include <numbers>
-#include <ranges>
+// #include <ranges>
 #include <span>
-#include <stop_token>
+// #include <stop_token>
 #include <semaphore>
-#include <source_location>
-#include <syncstream>
+// #include <source_location>
+// #include <syncstream>
 #include <version>
 #endif
 
 #if __cplusplus > 202002L
-#include <expected>
 #include <spanstream>
-#if __has_include(<stacktrace>)
-# include <stacktrace>
 #endif
-#include <stdatomic.h>
-#include <stdfloat>
-#endif
-
-#endif // HOSTED
