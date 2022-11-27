@@ -77,13 +77,10 @@ int32_t main() {
 endsnippet
 
 snippet minimal "minimalist begin"
-#include <iostream>
-#include<string.h>
-#include <math.h>
-
-
+#include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
+mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
 
 int32_t main() {
 	$0
