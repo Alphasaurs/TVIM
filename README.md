@@ -1,4 +1,9 @@
 # Tvim
+##vim location
+/users/alphasaurs/
+open this and your structure lool like this
+
+![Screenshot 2023-03-21 at 10 03 50 PM](https://user-images.githubusercontent.com/50196057/226678412-83b80c8b-4728-4a0f-b582-cf916ee3d315.png)
 
 ## error while running c++ code with #include <bits/stdc++.h> on macos
 `solution`
@@ -8,7 +13,8 @@ just create new folder  /usr/local/include/bits and paste this file https://gith
 `solution`
 g++ -std=c++20 stdc++.h
 
+
+
 ## add and commit
 git config --global alias.coa '!git add -A && git commit -m'
 git coa "updated"
-
