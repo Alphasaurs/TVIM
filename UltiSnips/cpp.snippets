@@ -1,9 +1,9 @@
 snippet snips "all snippets"
 /*
 snips
-beg
-minimal
+hello
 for
+beg
 read
 cout<<"starting";
 vect
@@ -37,7 +37,43 @@ deb
 */
 endsnippet
 
+snippet hello "minimalist begin"
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
+
+int32_t main() {
+   ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+	$0
+}
+endsnippet
+
 snippet beg "template"
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+void solve(){
+   
+	$0
+
+
+}
+
+int32_t main() {
+    ios_base::sync_with_stdio(0); cin.tie(0);
+    int t;
+    cin>>t;
+    while(t>0){
+        solve();
+        t--;
+
+    }
+}
+endsnippet
+
+snippet begs "template"
 #ifdef ONPC
 	#define _GLIBCXX_DEBUG
 #endif
@@ -76,16 +112,6 @@ int32_t main() {
 }
 endsnippet
 
-snippet minimal "minimalist begin"
-#include <bits/stdc++.h>
-using namespace std;
-typedef long long ll;
-mt19937 rnd(chrono::steady_clock::now().time_since_epoch().count());
-
-int32_t main() {
-	$0
-}
-endsnippet
 
 snippet for "for"
 for (int ${1:i} = 0; $1 < ${2:n}; $1++) {

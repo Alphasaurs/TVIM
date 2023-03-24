@@ -6,6 +6,7 @@
 call plug#begin()
 Plug 'gruvbox-community/gruvbox'
 
+Plug 'jiangmiao/auto-pairs'
 Plug 'lervag/vimtex'
 let g:tex_flavor='latex'
 let g:vimtex_view_method='general'
@@ -55,48 +56,55 @@ set vb t_vb=et
 set background=dark
 set timeoutlen=200
 
-"shortcuts
-
-""file handling
-"diff= vim -d origfile tocomparefile || vim -do origfile tocomparefile
+"cpp
 inoremap jj <Esc>
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 "find opening and closing bracket
 noremap <TAB>  
-
 "format code 
-map <F4> gg=G<C-o><C-o>
-
-"find and replace in all line. Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
-#:%s/foo/bar/g
-"For specific lines:Change each 'foo' to 'bar' for all lines from line 6 to line 10 inclusive.
-#:6,10s/foo/bar/g
-
+map hh gg=G<C-o><C-o>
 "previous tab
 noremap <F1> <ESC>:tabprev <CR> 
 vnoremap <F1> <ESC>:tabprev <CR>
 inoremap <F1> <ESC>
-
-"noremap <F7> <ESC> :w !python3 <CR>
-
+"saving code
+map <F2> :w <CR>
 "compiles c++ code
 noremap <F3> <ESC> :w <CR> :make <CR>
 inoremap <F3> <ESC> :w <CR> :make <CR>
+"compiles,run, without warning, with input  
+noremap <F4> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o %< % && ./%< < inp/inp.txt<CR>
+inoremap <F4> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o "%<" "%" && "./%<" < inp/inp.txt<CR>
+"compiles ,run,with warning,no input
+noremap <F5> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+inoremap <F5> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
+"compiles, run ,with warning, with input
+noremap <F6> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
+inoremap <F6> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+ 
 
-"compiles and run c++ code without warning 
-noremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o %< % && ./%< < inp<CR>
-inoremap <F8> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
+
+
+
+
+
+
+
+
+"""concepts
+"diff= vim -d origfile tocomparefile || vim -do origfile tocomparefile
+
+"find and replace in all line. Find each occurrence of 'foo' (in all lines), and replace it with 'bar'.
+":%s/foo/bar/g
+"For specific lines:Change each 'foo' to 'bar' for all lines from line 6 to line 10 inclusive.
+":6,10s/foo/bar/g
+
+
+
+
+
  
- 
-"compiles and run c++ code with warning and no input
-noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
-inoremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
-noremap <F9> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< <CR>
- 
-"compiles and run c++ code with warning and input
-noremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o %< % && ./%< < inp<CR>
-inoremap <F10> <ESC> :w <CR> :!g++ -fsanitize=address -std=c++20 -Wall -Wextra -Wshadow -DONPC -O2 -o "%<" "%" && "./%<" < inp<CR>
  
 "others
 let c_syntax_for_h=""
@@ -116,10 +124,12 @@ noremap <Leader>q :q<CR>
 noremap <Leader>o <C-O>
 noremap <Leader>i <C-I>
 noremap <Leader>a ggVG
-noremap <Leader>/ 0i//<ESC>
 noremap <Leader>s :source ~/.vimrc <CR>
 
-command! Cp :e ~/Documents/cpp/
+
+
+command! Cpp :cd ~/cpp/
+command! Cp :e ~/cpp/a.cpp
 command! Us :e ~/.vim/UltiSnips/
 command! As :e ~/.vimrc
 command! Vm :e ~/.vim/
