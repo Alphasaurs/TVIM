@@ -25,7 +25,10 @@
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ```
 * type vi in termial and enter :PlugInstall
-* 
+* install python3 using  brew install python, if you dont do it then you will face these error
+  ```
+    E319: Sorry, the command is not available in this version: py3 UltiSnips_Manager._track_change()
+  ```
 
 ## ultisnips
 to use this feature right command and then press tab
