@@ -1,5 +1,6 @@
 # Tvim
 ##vim location
+press “Command” + “Shift” + “.” to view hidden files
 /users/alphasaurs/
 open this and your structure lool like this
 
