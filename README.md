@@ -18,6 +18,7 @@
    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/abhisheksharma/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
+* brew analytics off, use this command after above
 * install git using brew install git
 * then install plug install using
   ```
