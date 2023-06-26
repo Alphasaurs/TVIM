@@ -1,10 +1,30 @@
-# Tvim
-##vim location
-press “Command” + “Shift” + “.” to view hidden files
-/users/alphasaurs/
-open this and your structure lool like this
+# Tvim (my mac vim setup)
+* install macvim from here https://macvim.org
+## vim location
+* press “Command” + “Shift” + “.” to view hidden files,
+* then add .vimrc here
+* after adding .vimrc in /users/abhisheksharma/ open this and your structure lool like this
 
 ![Screenshot 2023-03-21 at 10 03 50 PM](https://user-images.githubusercontent.com/50196057/226678412-83b80c8b-4728-4a0f-b582-cf916ee3d315.png)
+
+
+## .vimrc setup guide
+* first install homebrew using
+  ```
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
+* paste this command at the when homebrew installation finish in your terminal
+```
+   (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/abhisheksharma/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+* install git using brew install git
+* then install plug install using
+  ```
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ```
+* type vi in termial and enter :PlugInstall
+* 
 
 ## ultisnips
 to use this feature right command and then press tab
