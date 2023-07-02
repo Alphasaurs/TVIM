@@ -29,7 +29,7 @@
   ```
     E319: Sorry, the command is not available in this version: py3 UltiSnips_Manager._track_change()
   ```
-
+* ``` brew install vim ``` as it will install latest vim which is used to resolve this issue ultinips E319: Sorry, the command is not available in this version: py3 import vim
 ## ultisnips
 to use this feature right command and then press tab
 to use custom snippet make a folder and put your cpp.snippets in it
