@@ -1,5 +1,5 @@
-# Tvim (my mac vim setup)
-* install macvim from here https://macvim.org
+# VI
+I only use vi which is presintalled
 ## vim location
 * press “Command” + “Shift” + “.” to view hidden files,
 * then add .vimrc here
